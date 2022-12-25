@@ -1,0 +1,8 @@
+*.png linguist-detectable=true
+*.jpg linguist-detectable=true
+*.jpeg linguist-detectable=true
+*.html linguist-detectable=true
+*.pdf linguist-detectable=true
+*.md linguist-detectable=true
+*.txt linguist-detectable=true
+

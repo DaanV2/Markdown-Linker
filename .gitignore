@@ -1,0 +1,4 @@
+*.ini
+
+node_modules
+Scripts/dist
