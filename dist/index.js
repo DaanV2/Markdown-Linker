@@ -10144,7 +10144,7 @@ function action() {
     return __awaiter(this, void 0, void 0, function* () {
         const settings = {
             folder: core.getInput("folder", { trimWhitespace: true }),
-            ignores: core.getMultilineInput("ignores", { trimWhitespace: true }),
+            ignores: core.getMultilineInput("ignore", { trimWhitespace: true }),
         };
         console.log("Starting on linking", settings);
         yield (0, main_1.main)(settings);
