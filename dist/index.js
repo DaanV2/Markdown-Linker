@@ -9974,6 +9974,29 @@ exports.Replacer = Replacer;
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -9990,7 +10013,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.TagMap = void 0;
 const Document_1 = __nccwpck_require__(2310);
 const MarkdownTags_1 = __nccwpck_require__(4573);
-const core_1 = __importDefault(__nccwpck_require__(2186));
+const core = __importStar(__nccwpck_require__(2186));
 const fast_glob_1 = __importDefault(__nccwpck_require__(3664));
 class TagMap {
     constructor() {
@@ -10026,7 +10049,7 @@ class TagMap {
             }
             catch (err) {
                 console.warn(`Error scraping ${doc}`, err);
-                core_1.default.notice(`Error scraping ${doc}\n${err}`, { file: doc });
+                core.notice(`Error scraping ${doc}\n${err}`, { file: doc });
             }
         });
     }
@@ -10061,7 +10084,7 @@ class TagMap {
             }
             catch (err) {
                 console.warn("Error loading tag map", err);
-                core_1.default.notice(`Error loading tag map ${filepath}\n${err}`, { file: filepath });
+                core.notice(`Error loading tag map ${filepath}\n${err}`, { file: filepath });
             }
         });
     }
@@ -10082,6 +10105,29 @@ exports.TagMap = TagMap;
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -10091,17 +10137,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const main_1 = __nccwpck_require__(4725);
-const core_1 = __importDefault(__nccwpck_require__(2186));
+const core = __importStar(__nccwpck_require__(2186));
 function action() {
     return __awaiter(this, void 0, void 0, function* () {
         const settings = {
-            folder: core_1.default.getInput("folder", { trimWhitespace: true }),
-            ignores: core_1.default.getMultilineInput("ignores", { trimWhitespace: true }),
+            folder: core.getInput("folder", { trimWhitespace: true }),
+            ignores: core.getMultilineInput("ignores", { trimWhitespace: true }),
         };
         console.log("Starting on linking", settings);
         yield (0, main_1.main)(settings);
@@ -10109,7 +10152,7 @@ function action() {
 }
 action()
     .then(() => console.log("done"))
-    .catch((err) => core_1.default.setFailed(err));
+    .catch((err) => core.setFailed(err));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -10119,6 +10162,29 @@ action()
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -10136,27 +10202,27 @@ exports.main = void 0;
 const Replacer_1 = __nccwpck_require__(354);
 const TagMap_1 = __nccwpck_require__(6788);
 const fast_glob_1 = __importDefault(__nccwpck_require__(3664));
-const core_1 = __importDefault(__nccwpck_require__(2186));
+const core = __importStar(__nccwpck_require__(2186));
 function main(settings) {
     return __awaiter(this, void 0, void 0, function* () {
         const cwd = settings.folder;
         const tagMap = new TagMap_1.TagMap();
         // Loading maps
-        yield core_1.default.group("Loading maps", () => __awaiter(this, void 0, void 0, function* () {
+        yield core.group("Loading maps", () => __awaiter(this, void 0, void 0, function* () {
             return tagMap.loadMaps(cwd);
         }));
         // Gathering files
-        const files = yield core_1.default.group("Gathering files", () => __awaiter(this, void 0, void 0, function* () {
+        const files = yield core.group("Gathering files", () => __awaiter(this, void 0, void 0, function* () {
             const ignores = ["node_modules", ".tags", ...settings.ignores];
             return fast_glob_1.default.sync(["**/*.md"], { cwd, absolute: true, ignore: ignores });
         }));
         // Scraping files
-        yield core_1.default.group("Scraping files", () => __awaiter(this, void 0, void 0, function* () {
+        yield core.group("Scraping files", () => __awaiter(this, void 0, void 0, function* () {
             return Promise.all(files.map((file) => tagMap.scrapeDoc(file)));
         }));
         console.info("Tag count:", tagMap.count);
         // Replacing tags
-        yield core_1.default.group("Replacing tags", () => __awaiter(this, void 0, void 0, function* () {
+        yield core.group("Replacing tags", () => __awaiter(this, void 0, void 0, function* () {
             const replacer = new Replacer_1.Replacer(tagMap);
             return replacer.replaceDocuments(files);
         }));

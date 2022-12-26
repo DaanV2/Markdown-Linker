@@ -1,7 +1,7 @@
 import { loadDocument } from "./Document";
 import { MarkdownTags, SerializedTagMap } from "./MarkdownTags";
 import { ReplaceItem } from "./ReplaceItem";
-import core from "@actions/core";
+import * as core from "@actions/core";
 import FastGlob from "fast-glob";
 
 export class TagMap {

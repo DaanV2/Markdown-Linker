@@ -1,5 +1,5 @@
 import { main } from "./main";
-import core from "@actions/core";
+import * as core from "@actions/core";
 
 async function action() {
   const settings = {

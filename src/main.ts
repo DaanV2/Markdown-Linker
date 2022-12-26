@@ -1,7 +1,7 @@
 import { Replacer } from "./Replacer";
 import { TagMap } from "./TagMap";
 import FastGlob from "fast-glob";
-import core from "@actions/core";
+import * as core from "@actions/core";
 
 export interface Settings {
   folder: string;
