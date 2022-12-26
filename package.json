@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "name": "markdown-tags",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "keywords": [
     "github",
     "action",
