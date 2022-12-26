@@ -1,13 +1,14 @@
 name: Markdown Linker
 description: An actions that creates links between markdown documents based upon tags
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  folder:
+    description: The folder to start as from, default to github.workspace
+    required: false
+    default: ${{ github.workspace }}
+  ignore:
+    description: Glob patterns to use on what files / folder to ignore, each line is a pattern
+    required: false
+    default: ""
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: node16
+  main: dist/index.js
