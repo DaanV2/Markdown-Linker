@@ -13,7 +13,7 @@
     "tags"
   ],
   "scripts": {
-    "compile": "tsc -b && ncc build ./out/src/index.js -m -s",
+    "compile": "tsc -b && ncc build ./out/src/index.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "precompile": "tsc -b --clean",
     "prepublishOnly": "npm test && npm run compile",
