@@ -1,7 +1,8 @@
-import FastGlob from "fast-glob";
-import { LoadDocument } from "./Document";
-import { MarkdownTags } from "./MarkdownTags";
+import { loadDocument } from "./Document";
+import { MarkdownTags, SerializedTagMap } from "./MarkdownTags";
 import { ReplaceItem } from "./ReplaceItem";
+import core from "@actions/core";
+import FastGlob from "fast-glob";
 
 export class TagMap {
   private _data: ReplaceItem[];
@@ -39,10 +40,11 @@ export class TagMap {
 
   public async scrapeDoc(doc: string): Promise<void> {
     try {
-      const content = await LoadDocument(doc);
+      const content = await loadDocument(doc);
       return this.scrape(content, doc);
     } catch (err) {
-      console.error(err);
+      console.warn(`Error scraping ${doc}`, err);
+      core.notice(`Error scraping ${doc}\n${err}`, { file: doc });
     }
   }
 
@@ -64,10 +66,10 @@ export class TagMap {
     }
   }
 
-  public async LoadMap(filepath: string): Promise<void> {
+  public async loadMap(filepath: string): Promise<void> {
     try {
       console.log("Loading map", filepath);
-      const content = await LoadDocument(filepath);
+      const content = await loadDocument(filepath);
       const json = JSON.parse(content);
 
       //Convert array of tags to a map
@@ -79,27 +81,14 @@ export class TagMap {
         });
       }
     } catch (err) {
-      console.log("Error loading map", err);
+      console.warn("Error loading tag map", err);
+      core.notice(`Error loading tag map ${filepath}\n${err}`, { file: filepath });
     }
   }
 
-  public async LoadMaps(dir: string): Promise<void> {
+  public async loadMaps(dir: string): Promise<void> {
     const files = FastGlob.sync(["**/.tags/*.json"], { cwd: dir, absolute: true });
 
-    for (const file of files) {
-      await this.LoadMap(file);
-    }
-  }
-}
-
-interface SerializedTagMap {
-  tag: string;
-  url: string;
-  search?: string;
-}
-
-namespace SerializedTagMap {
-  export function is(value: any): value is SerializedTagMap {
-    return typeof value === "object" && typeof value.tag === "string";
+    return Promise.all(files.map((file) => this.loadMap(file))).then(() => {});
   }
 }

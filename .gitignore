@@ -1,4 +1,5 @@
-*.ini
-
 node_modules
-Scripts/dist
+out/
+
+dist/**/*.map
+dist/**/sourcemap-register.js

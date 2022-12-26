@@ -1,8 +1,7 @@
-import { LoadDocument, SaveDocument } from "./Document";
+import { isInLink } from "./Markdown";
+import { loadDocument, saveDocument } from "./Document";
 import { TagMap } from "./TagMap";
 import path from "path";
-import { ReplaceItem } from "./ReplaceItem";
-import { isInLink } from "./Markdown";
 
 export class Replacer {
   private tags: TagMap;
@@ -16,12 +15,12 @@ export class Replacer {
   }
 
   public async replaceDocument(file: string): Promise<void> {
-    const content = await LoadDocument(file);
+    const content = await loadDocument(file);
     const newContent = this.replace(content, file);
 
     if (content !== newContent) {
       console.info("Saving", file);
-      return SaveDocument(file, newContent);
+      return saveDocument(file, newContent);
     }
   }
 

@@ -10,7 +10,7 @@
     "tags"
   ],
   "scripts": {
-    "compile": "tsc -b",
+    "compile": "tsc -b && ncc build ./out/src/index.js -m -s",
     "precompile": "tsc -b --clean",
     "tags": "ts-node src/index.ts",
     "watch": "tsc -b --watch",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.1.2",
+    "@vercel/ncc": "^0.36.0",
     "jest": "^29.1.2",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",

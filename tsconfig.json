@@ -3,10 +3,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "module": "CommonJS",
-    "outDir": "./dist",
+    "outDir": "./out",
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES6"
+    "target": "ES6",
+    "sourceMap": true
     // "allowJs": true,
     // "allowSyntheticDefaultImports": true,
     // "allowUmdGlobalAccess": true,
