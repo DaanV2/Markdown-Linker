@@ -37,7 +37,6 @@ export class Replacer {
         url = path.relative(dir, url).replace(/\\/gim, "/");
         url = encodeURI(url);
       }
-      const newText = `[${tag}](${url})`;
 
       for (let i = 0; i < max; i++) {
         let line = lines[i];
@@ -59,6 +58,7 @@ export class Replacer {
 
         lines[i] = line.replace(search, (match: string, tag, offset, original) => {
           if (isInLink(original, offset)) return match;
+          const newText = `[${tag}](${url})`;
 
           return match.replace(tagSearch, newText);
         });

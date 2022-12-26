@@ -24,29 +24,28 @@ describe("Replacing", () => {
 
   const tags = new TagMap();
   tags.add("Graham Norton", otherFilepath);
-
   const replacer = new Replacer(tags);
 
   const tests: { from: string; to: string }[] = [
     {
       from: "Graham Norton",
-      to: `[Graham Norton](../other.md)`,
+      to: `[Graham Norton](other.md)`,
     },
     {
       from: " Graham Norton ",
-      to: ` [Graham Norton](../other.md) `,
+      to: ` [Graham Norton](other.md) `,
     },
     {
       from: "Graham Norton is a great guy",
-      to: `[Graham Norton](../other.md) is a great guy`,
+      to: `[Graham Norton](other.md) is a great guy`,
     },
     {
       from: "graham norton is a great guy",
-      to: `[graham norton](../other.md) is a great guy`,
+      to: `[graham norton](other.md) is a great guy`,
     },
     {
       from: "Is Graham Norton a great guy?",
-      to: `Is [Graham Norton](../other.md) a great guy?`,
+      to: `Is [Graham Norton](other.md) a great guy?`,
     },
     {
       from: "# Graham Norton",
