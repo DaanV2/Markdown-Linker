@@ -6,3 +6,5 @@
 *.md linguist-detectable=true
 *.txt linguist-detectable=true
 
+dist/index.js linguist-generated=true
+
