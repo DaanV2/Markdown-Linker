@@ -6,17 +6,9 @@ exports[`Replacing Able to replace ' Frodo baggings ' with ' [Frodo baggings](ot
 [Frodo baggings]: other.md"
 `;
 
-exports[`Replacing Able to replace '# Frodo baggings' with '# Frodo baggings' 1`] = `
-"# Frodo baggings
+exports[`Replacing Able to replace '# Frodo baggings' with '# Frodo baggings' 1`] = `"# Frodo baggings"`;
 
-"
-`;
-
-exports[`Replacing Able to replace '##### Frodo baggings' with '##### Frodo baggings' 1`] = `
-"##### Frodo baggings
-
-"
-`;
+exports[`Replacing Able to replace '##### Frodo baggings' with '##### Frodo baggings' 1`] = `"##### Frodo baggings"`;
 
 exports[`Replacing Able to replace 'Frodo baggings is a great guy' with '[Frodo baggings](other.md) is a great guy' 1`] = `
 "[Frodo baggings] is a great guy

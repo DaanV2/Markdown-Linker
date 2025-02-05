@@ -58,7 +58,7 @@ export class TagMap {
       .map(([key, url]) => `[${key}]: ${url}`)
       .join("\n");
   
-    return `${content}\n\n${linkDefs}`;
+    return `${content}\n\n${linkDefs}`.trimEnd();
   }
 
   public has(tag: string): boolean {

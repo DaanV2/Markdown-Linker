@@ -16,13 +16,5 @@ But now im [gandalf] the smoll.
 
 
 [Gandalf]: original.md",
-  "sample/original.md": "<!--{"tags":["gandalf", "Gandalf"]}-->
-
-# I am a test file
-
-
-I am Gandalf, but should be left alone
-
-",
 }
 `;
