@@ -33040,7 +33040,7 @@ class TagMap {
         const linkDefs = Object.entries(linkDefinitions)
             .map(([key, url]) => `[${key}]: ${url}`)
             .join("\n");
-        return `${content}\n\n${linkDefs}`.trimEnd();
+        return `${content.trimEnd()}\n\n${linkDefs}`.trimEnd();
     }
     has(tag) {
         return this._data.some((item) => item.tag === tag);
