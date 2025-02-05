@@ -2,7 +2,7 @@
 
 exports[`Sample Test will perform a simple update of gandalf 1`] = `
 {
-  "/workspaces/Markdown-Linker/test/sample/gandalf.md": "# I Am Gandalf the Title, and should be left alone
+  "sample/gandalf.md": "# I Am Gandalf the Title, and should be left alone
 
 I am [Gandalf] the Grey
 
@@ -16,7 +16,7 @@ But now im [gandalf] the smoll.
 
 
 [Gandalf]: original.md",
-  "/workspaces/Markdown-Linker/test/sample/original.md": "<!--{"tags":["gandalf", "Gandalf"]}-->
+  "sample/original.md": "<!--{"tags":["gandalf", "Gandalf"]}-->
 
 # I am a test file
 

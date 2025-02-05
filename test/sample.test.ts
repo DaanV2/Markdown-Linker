@@ -12,6 +12,7 @@ jest.mock('../src/document', () => {
 	  ...originalModule,
 	  saveDocument: jest.fn((doc: string, content: string) => {
 		console.log('Received', doc, content);
+		doc = path.relative(__dirname, doc);
 		docs[doc] = content;
 	  })
 	};
