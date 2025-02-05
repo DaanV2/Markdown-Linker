@@ -1,5 +1,7 @@
 name: Markdown Linker
 description: An actions that creates links between markdown documents based upon tags
+icon: archive
+color: purple
 inputs:
   folder:
     description: The folder to start as from, default to github.workspace
