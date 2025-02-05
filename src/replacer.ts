@@ -1,6 +1,6 @@
-import { isInLink } from "./Markdown";
-import { loadDocument, saveDocument } from "./Document";
-import { TagMap } from "./TagMap";
+import { isInLink } from "./markdown";
+import { loadDocument, saveDocument } from "./document";
+import { TagMap } from "./tag-map";
 import path from "path";
 
 export class Replacer {

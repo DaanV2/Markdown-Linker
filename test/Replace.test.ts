@@ -1,5 +1,5 @@
-import { Replacer } from "../src/Replacer";
-import { TagMap } from "../src/TagMap";
+import { Replacer } from "../src/replacer";
+import { TagMap } from "../src/tag-map";
 import path from "path";
 
 describe("Scraping", () => {

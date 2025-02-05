@@ -1,5 +1,5 @@
-import { Replacer } from "./Replacer";
-import { TagMap } from "./TagMap";
+import { Replacer } from "./replacer";
+import { TagMap } from "./tag-map";
 import FastGlob from "fast-glob";
 import * as core from "@actions/core";
 

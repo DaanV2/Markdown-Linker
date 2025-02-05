@@ -1,4 +1,4 @@
-import { loadDocument } from "./Document";
+import { loadDocument } from "./document";
 import { MarkdownTags, SerializedTagMap } from "./MarkdownTags";
 import { ReplaceItem } from "./ReplaceItem";
 import * as core from "@actions/core";
