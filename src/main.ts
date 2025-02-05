@@ -27,7 +27,7 @@ export async function main(settings: Settings) {
   await core.group("Scraping files", async () => {
     return Promise.all(files.map((file) => tagMap.scrapeDoc(file)));
   });
-  console.info("Tag count:", tagMap.count);
+  core.debug(`Tag count: ${tagMap.count}`);
 
   // Replacing tags
   await core.group("Replacing tags", async () => {

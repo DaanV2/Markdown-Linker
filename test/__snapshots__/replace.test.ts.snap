@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Replacing Able to replace ' Frodo baggings ' with ' [Frodo baggings](other.md) ' 1`] = `
+" [Frodo baggings] 
+
+[Frodo baggings]: other.md"
+`;
+
+exports[`Replacing Able to replace '# Frodo baggings' with '# Frodo baggings' 1`] = `
+"# Frodo baggings
+
+"
+`;
+
+exports[`Replacing Able to replace '##### Frodo baggings' with '##### Frodo baggings' 1`] = `
+"##### Frodo baggings
+
+"
+`;
+
+exports[`Replacing Able to replace 'Frodo baggings is a great guy' with '[Frodo baggings](other.md) is a great guy' 1`] = `
+"[Frodo baggings] is a great guy
+
+[Frodo baggings]: other.md"
+`;
+
+exports[`Replacing Able to replace 'Frodo baggings is a great guy' with '[Frodo baggings](other.md) is a great guy' 2`] = `
+"[Frodo baggings] is a great guy
+
+[Frodo baggings]: other.md"
+`;
+
+exports[`Replacing Able to replace 'Frodo baggings' with '[Frodo baggings](other.md)' 1`] = `
+"[Frodo baggings]
+
+[Frodo baggings]: other.md"
+`;
+
+exports[`Replacing Able to replace 'Is [Frodo baggings](../example/mark.md) a great guy?' with 'Is [Frodo baggings](../example/mark.md) a great guy?' 1`] = `
+"Is [Frodo baggings] a great guy?
+
+[Frodo baggings]: ../example/mark.md"
+`;
+
+exports[`Replacing Able to replace 'Is [Guy Frodo baggings](../example/mark.md) a great guy?' with 'Is [Guy Frodo baggings](../example/mark.md) a great guy?' 1`] = `
+"Is [Guy Frodo baggings] a great guy?
+
+[Guy Frodo baggings]: ../example/mark.md"
+`;
+
+exports[`Replacing Able to replace 'Is Frodo baggings a great guy?' with 'Is [Frodo baggings](other.md) a great guy?' 1`] = `
+"Is [Frodo baggings] a great guy?
+
+[Frodo baggings]: other.md"
+`;

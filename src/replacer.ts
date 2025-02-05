@@ -65,6 +65,7 @@ export class Replacer {
       }
     });
 
-    return lines.join("\n");
+    const updatedText = lines.join("\n");
+    return this.tags.rewriteLinks(updatedText);
   }
 }

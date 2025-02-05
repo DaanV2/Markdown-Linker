@@ -1,6 +1,6 @@
 import { loadDocument } from "./document";
-import { MarkdownTags, SerializedTagMap } from "./MarkdownTags";
-import { ReplaceItem } from "./ReplaceItem";
+import { MarkdownTags, SerializedTagMap } from "./markdown-tags";
+import { ReplaceItem } from "./replace-item";
 import * as core from "@actions/core";
 import FastGlob from "fast-glob";
 
@@ -28,6 +28,37 @@ export class TagMap {
     });
 
     return this;
+  }
+
+  public rewriteLinks(content: string): string {
+    const linkDefinitions: Record<string, string> = {};
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    
+    // Collect existing link definitions
+    const existingLinkDefs = content.match(/^\[([^\]]+)\]:\s*(.+)$/gm) || [];
+    existingLinkDefs.forEach((def) => {
+      const parts = def.match(/^\[([^\]]+)\]:\s*(.+)$/);
+      if (parts) {
+        linkDefinitions[parts[1].toLowerCase()] = parts[2];
+      }
+    });
+  
+    // Rewrite inline links to reference links
+    content = content.replace(linkRegex, (_fullMatch, text, url) => {
+      let ref = Object.keys(linkDefinitions).find((key) => linkDefinitions[key] === url);
+      if (!ref) {
+        ref = `${text}`;
+        linkDefinitions[ref] = url;
+      }
+      return `[${text}]`;
+    });
+  
+    // Append updated link definitions to the bottom
+    const linkDefs = Object.entries(linkDefinitions)
+      .map(([key, url]) => `[${key}]: ${url}`)
+      .join("\n");
+  
+    return `${content}\n\n${linkDefs}`;
   }
 
   public has(tag: string): boolean {
