@@ -33008,20 +33008,31 @@ class TagMap {
     rewriteLinks(content) {
         const linkDefinitions = {};
         const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        let index = 1;
         // Collect existing link definitions
         const existingLinkDefs = content.match(/^\[([^\]]+)\]:\s*(.+)$/gm) || [];
         existingLinkDefs.forEach((def) => {
             const parts = def.match(/^\[([^\]]+)\]:\s*(.+)$/);
             if (parts) {
-                linkDefinitions[parts[1].toLowerCase()] = parts[2];
+                linkDefinitions[parts[1]] = parts[2];
+                content = content.replace(def, ''); // Remove existing link definitions from content
             }
         });
         // Rewrite inline links to reference links
         content = content.replace(linkRegex, (_fullMatch, text, url) => {
             let ref = Object.keys(linkDefinitions).find((key) => linkDefinitions[key] === url);
+            let nref = text;
             if (!ref) {
                 ref = `${text}`;
+                if (typeof linkDefinitions[ref] === "string") {
+                    if (linkDefinitions[ref] !== url) {
+                        nref = `-${index++}`;
+                    }
+                }
                 linkDefinitions[ref] = url;
+            }
+            if (nref !== text) {
+                return `[${text}][${nref}]`;
             }
             return `[${text}]`;
         });
