@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "@actions/github": "^6.0.0",
+    "@actions/github": "^6.0.1",
     "fast-glob": "^3.3.2"
   },
   "devDependencies": {
