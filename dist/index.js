@@ -33243,6 +33243,10 @@ class TagMap {
         });
         // Rewrite inline links to reference links
         content = content.replace(linkRegex, (_fullMatch, text, url) => {
+            // Skip fragment links (internal page anchors)
+            if (url.startsWith('#')) {
+                return _fullMatch;
+            }
             let ref = Object.keys(linkDefinitions).find((key) => linkDefinitions[key] === url);
             let nref = text;
             if (!ref) {
