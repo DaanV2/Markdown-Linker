@@ -13,9 +13,9 @@
     "tags"
   ],
   "scripts": {
-    "compile": "tsc -b && ncc build ./out/src/index.js",
+    "compile": "node esbuild.config.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "precompile": "tsc -b --clean",
+    "precompile": "rm -rf dist",
     "prepublishOnly": "npm test && npm run compile",
     "tags": "ts-node src/index.ts",
     "pretest": "npm run compile",
@@ -34,7 +34,7 @@
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.22",
-    "@vercel/ncc": "^0.38.1",
+    "esbuild": "^0.25.12",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
