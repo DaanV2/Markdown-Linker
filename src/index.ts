@@ -1,10 +1,10 @@
+import { GitHub } from './github';
 import { main } from "./main";
-import * as core from "@actions/core";
 
 async function action() {
   const settings = {
-    folder: core.getInput("folder", { trimWhitespace: true }),
-    ignores: core.getMultilineInput("ignore", { trimWhitespace: true }),
+    folder: GitHub.getInput("folder", { trimWhitespace: true }),
+    ignores: GitHub.getMultilineInput("ignore", { trimWhitespace: true }),
   };
 
   console.log("Starting on linking", settings);
@@ -14,4 +14,4 @@ async function action() {
 
 action()
   .then(() => console.log("done"))
-  .catch((err) => core.setFailed(err));
+  .catch((err) => GitHub.setFailed(err));

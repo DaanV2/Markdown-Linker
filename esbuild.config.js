@@ -10,7 +10,8 @@ esbuild.build({
   minify: true,
   sourcemap: false,
   external: [],
-  logLevel: 'info',
+  logLevel: 'verbose',
+  treeShaking: true,
 }).catch((err) => {
   console.error('Build failed:', err);
   process.exit(1);

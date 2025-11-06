@@ -1,8 +1,8 @@
 import { loadDocument } from "./document";
+import { GitHub } from './github';
 import { MarkdownTags, SerializedTagMap } from "./markdown-tags";
 import { ReplaceItem } from "./replace-item";
-import * as core from "@actions/core";
-import FastGlob from "fast-glob";
+import { sync } from "fast-glob";
 
 export class TagMap {
   private _data: ReplaceItem[];
@@ -95,7 +95,7 @@ export class TagMap {
       return this.scrape(content, doc);
     } catch (err) {
       console.warn(`Error scraping ${doc}`, err);
-      core.notice(`Error scraping ${doc}\n${err}`, { file: doc });
+      GitHub.notice(`Error scraping ${doc}\n${err}`, { file: doc });
     }
   }
 
@@ -133,12 +133,12 @@ export class TagMap {
       }
     } catch (err) {
       console.warn("Error loading tag map", err);
-      core.notice(`Error loading tag map ${filepath}\n${err}`, { file: filepath });
+      GitHub.notice(`Error loading tag map ${filepath}\n${err}`, { file: filepath });
     }
   }
 
   public async loadMaps(dir: string): Promise<void> {
-    const files = FastGlob.sync(["**/.tags/*.json"], { cwd: dir, absolute: true });
+    const files = sync(["**/.tags/*.json"], { cwd: dir, absolute: true });
 
     return Promise.all(files.map((file) => this.loadMap(file))).then(() => {});
   }
